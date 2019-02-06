@@ -200,6 +200,7 @@ type PropType = {
 
   position?: 'static' | 'absolute' | 'relative' | 'fixed',
   right?: boolean,
+  shadow?: boolean,
   shape?:
     | 'square'
     | 'rounded'
@@ -605,6 +606,7 @@ const propToFn = {
     // default: static
   }),
   right: toggle(layout.right0),
+  shadow: toggle(styles.shadow),
   shape: mapping({
     circle: borders.circle,
     pill: borders.pill,
@@ -970,6 +972,7 @@ Box.propTypes = {
 
   position: PropTypes.oneOf(['static', 'absolute', 'relative', 'fixed']),
   right: PropTypes.bool,
+  shadow: PropTypes.bool,
   shape: PropTypes.oneOf([
     'square',
     'rounded',

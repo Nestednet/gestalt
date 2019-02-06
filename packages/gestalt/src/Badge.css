@@ -1,24 +1,47 @@
-.Badge {
-  composes: antialiased sansSerif letterSpacing from "./Typography.css";
-  composes: fontWeightBold from "./Typography.css";
-  composes: blue from "./Colors.css";
-  composes: blueBorder from "./Colors.css";
-  composes: inlineBlock from "./Layout.css";
+.badge {
+  padding: 6px 10px;
+}
+
+.pill {
+  border-radius: 500px;
+}
+
+.rounded-rectangle {
   border-radius: 4px;
-  border-style: solid;
-  border-width: 1px;
-  font-size: 10px;
-  line-height: 1;
-  margin-top: -4px;
-  padding: 2px;
-  text-transform: uppercase;
-  white-space: nowrap;
 }
 
-.middle {
-  vertical-align: middle;
+.warning {
+  background: #f9ecc9;
+  color: #62321f;
 }
 
-.top {
-  vertical-align: super;
+.alarm {
+  background: #fee0e0;
+  color: #6e2425;
+}
+
+.good {
+  background: #d5ede9;
+  color: #138771;
+}
+
+.info {
+  background: #e8e8e8;
+  color: #45575b;
+}
+
+.center {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.justify {
+  text-align: justify;
 }

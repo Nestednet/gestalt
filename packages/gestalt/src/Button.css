@@ -62,6 +62,14 @@
   background-color: #dadada;
 }
 
+.green {
+  background-color: #50a789;
+}
+
+.pill {
+  border-radius: 500px;
+}
+
 .red {
   composes: redBg from "./Colors.css";
 }

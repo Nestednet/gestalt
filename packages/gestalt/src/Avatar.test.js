@@ -19,16 +19,6 @@ describe('Avatar', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('renders an outline', () => {
-    const tree = create(<Avatar name="Jenny" outline />).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('renders the verified icon', () => {
-    const tree = create(<Avatar name="Jammy" verified />).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
   it('renders the correct src', () => {
     const tree = create(
       <Avatar name="Strava" src="http://pinterest.com/img/strave.png" />
@@ -64,31 +54,6 @@ describe('Avatar', () => {
         name="Strava"
         src="http://pinterest.com/img/strave.png"
         size="lg"
-      />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('renders the Pinterest P on verified', () => {
-    const tree = create(
-      <Avatar
-        name="Strava"
-        src="http://pinterest.com/img/strave.png"
-        size="md"
-        verified
-        icon="pinterest"
-      />
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-
-  it('renders the checkmark on verified default', () => {
-    const tree = create(
-      <Avatar
-        name="Strava"
-        src="http://pinterest.com/img/strave.png"
-        size="md"
-        verified
       />
     ).toJSON();
     expect(tree).toMatchSnapshot();

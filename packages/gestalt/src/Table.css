@@ -1,0 +1,123 @@
+.shadow {
+  box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.booking_requests_transactions.\__hidden {
+  display: none;
+}
+
+.booking_requests_transactions.guest {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 18px;
+}
+
+.booking_requests_transactions > div {
+  width: 100%;
+}
+
+.booking_requests_transactions > div > div {
+  padding: 0 24px;
+}
+
+@media only screen and (min-width: 0) and (max-width: 767px) {
+  .booking_requests_transactions > div > div {
+    padding: 0 3%;
+  }
+}
+
+.booking_requests_transactions .transactions_table__header {
+  background-color: #f4f7fa;
+  height: 36px;
+}
+
+.booking_requests_transactions .transactions_table__header > div {
+  color: #4a586b;
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.booking_requests_transactions .transactions_table__row:not(:last-child) {
+  border-bottom: 1px solid #ebebeb;
+}
+
+.booking_requests_transactions .transactions_table__row > div {
+  padding-bottom: 8px;
+  padding-top: 8px;
+}
+
+.booking_requests_transactions .transactions_table__row .date {
+  color: #989e9f;
+  font-size: 12px;
+}
+
+.booking_requests_transactions .transactions_table__row .concept {
+  font-size: 12px;
+}
+
+.booking_requests_transactions .transactions_table__row .amount {
+  color: #00bf99;
+  font-size: 12px;
+}
+
+.booking_requests_transactions .transactions_table__row .status > div {
+  border-radius: 14px;
+  display: inline-block;
+}
+
+.booking_requests_transactions .transactions_table__row .status > div > div {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1%;
+  padding: 0 10px;
+  position: relative;
+  text-transform: capitalize;
+  top: -2px;
+}
+
+.booking_requests_transactions
+.transactions_table__row
+.status.\__pending
+> div {
+  background-color: #f9ecc9;
+}
+
+.booking_requests_transactions
+.transactions_table__row
+.status.\__pending
+> div
+> span {
+  color: #62321f;
+}
+
+.booking_requests_transactions
+.transactions_table__row
+.status.\__succeeded
+> div {
+  background-color: #d5ede9;
+}
+
+.booking_requests_transactions
+.transactions_table__row
+.status.\__succeeded
+> div
+> span {
+  color: #138771;
+}
+
+.booking_requests_transactions
+.transactions_table__row
+.status.\__started
+> div {
+  background-color: #f4f7fa;
+}
+
+.booking_requests_transactions
+.transactions_table__row
+.status.\__started
+> div
+> span {
+  color: #4a586b;
+}

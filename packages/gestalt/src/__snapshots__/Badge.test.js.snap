@@ -2,8 +2,12 @@
 
 exports[`Badge renders 1`] = `
 <span
-  className="Badge middle"
+  className="badge pill info center"
 >
-  Badge
+  <div
+    className="Text fontSize3 darkGray alignLeft breakWord fontStyleNormal fontWeightNormal"
+  >
+    Test
+  </div>
 </span>
 `;

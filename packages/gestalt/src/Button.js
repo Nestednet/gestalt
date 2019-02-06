@@ -3,13 +3,16 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import styles from './Button.css';
+import Box from './Box.js';
 import Text from './Text.js';
+import Icon from './Icon.js';
+import icons from './icons/index.js';
 
 type Props = {|
   accessibilityExpanded?: boolean,
   accessibilityHaspopup?: boolean,
   accessibilityLabel?: string,
-  color?: 'gray' | 'red' | 'blue' | 'transparent' | 'white',
+  color?: 'green' | 'transparent', // TODO: assignar als colors de nested // FIXME: FIXME
   disabled?: boolean,
   inline?: boolean,
   name?: string,
@@ -17,6 +20,8 @@ type Props = {|
   size?: 'sm' | 'md' | 'lg',
   text: string,
   type?: 'submit' | 'button',
+  isPill?: boolean,
+  buttonIcon?: $Keys<typeof icons>,
 |};
 
 export default function Button(props: Props) {
@@ -24,9 +29,11 @@ export default function Button(props: Props) {
     accessibilityExpanded,
     accessibilityHaspopup,
     accessibilityLabel,
-    color = 'gray',
+    color = 'green',
     disabled = false,
     inline = false,
+    isPill = false,
+    buttonIcon,
     name,
     onClick,
     size = 'md',
@@ -40,6 +47,7 @@ export default function Button(props: Props) {
     red: 'white',
     transparent: 'white',
     white: 'darkGray',
+    green: 'white',
   };
 
   const classes = classnames(styles.button, {
@@ -52,6 +60,7 @@ export default function Button(props: Props) {
     [styles.enabled]: !disabled,
     [styles.inline]: inline,
     [styles.block]: !inline,
+    [styles.pill]: isPill,
   });
 
   /* eslint-disable react/button-has-type */
@@ -66,15 +75,38 @@ export default function Button(props: Props) {
       onClick={event => onClick && onClick({ event })}
       type={type}
     >
-      <Text
-        align="center"
-        bold
-        color={disabled ? 'gray' : textColor[color]}
-        overflow="normal"
-        size={size}
-      >
-        {text}
-      </Text>
+      {buttonIcon && (
+        <Box
+          position="relative"
+          display="flex"
+          direction="row"
+          alignItems="center"
+        >
+          <Icon
+            icon={buttonIcon}
+            accessibilityLabel={buttonIcon}
+            color={disabled ? 'gray' : textColor[color]}
+          />
+          <Text
+            align="center"
+            color={disabled ? 'gray' : textColor[color]}
+            overflow="normal"
+            size={size}
+          >
+            {text}
+          </Text>
+        </Box>
+      )}
+      {!buttonIcon && (
+        <Text
+          align="center"
+          color={disabled ? 'gray' : textColor[color]}
+          overflow="normal"
+          size={size}
+        >
+          {text}
+        </Text>
+      )}
     </button>
   );
   /* eslint-enable react/button-has-type */
@@ -84,7 +116,14 @@ Button.propTypes = {
   accessibilityExpanded: PropTypes.bool,
   accessibilityHaspopup: PropTypes.bool,
   accessibilityLabel: PropTypes.string,
-  color: PropTypes.oneOf(['blue', 'gray', 'red', 'transparent', 'white']),
+  color: PropTypes.oneOf([
+    'blue',
+    'gray',
+    'red',
+    'transparent',
+    'white',
+    'green',
+  ]),
   disabled: PropTypes.bool,
   inline: PropTypes.bool,
   name: PropTypes.string,
@@ -92,4 +131,6 @@ Button.propTypes = {
   size: PropTypes.oneOf(['sm', 'md', 'lg']),
   text: PropTypes.string.isRequired,
   type: PropTypes.oneOf(['button', 'submit']),
+  isPill: PropTypes.bool,
+  buttonIcon: PropTypes.string,
 };

@@ -2,54 +2,42 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import Box from './Box.js';
-import Icon from './Icon.js';
 import Image from './Image.js';
 import Mask from './Mask.js';
-import typography from './Typography.css';
 
-const Square = (props: *) => (
-  <Box {...props} position="relative">
-    <Box
-      dangerouslySetInlineStyle={{ __style: { paddingBottom: '100%' } }}
-      position="relative"
-    />
-    <Box position="absolute" top left bottom right>
-      {props.children}
-    </Box>
-  </Box>
-);
+type Props = {|
+  name: string,
+  profile?: string,
+  shape: 'circle' | 'rounded' | 'square',
+  onError: () => void,
+|};
 
-const DefaultAvatar = ({ name }: { name: string }) => {
-  const firstInitial = name ? [...name][0].toUpperCase() : '';
+function DefaultAvatar(props: Props) {
+  const { name, profile, shape, onError } = props;
+  const src =
+    profile === 'user'
+      ? 'https://s3-eu-west-1.amazonaws.com/nestednet-images/default-templates/avatars/user_avatar-default.jpg'
+      : 'https://s3-eu-west-1.amazonaws.com/nestednet-images/default-templates/avatars/company_avatar-default.jpg';
+
   return (
-    <Square color="gray" shape="circle">
-      {firstInitial && (
-        <svg
-          width="100%"
-          viewBox="-50 -50 100 100"
-          version="1.1"
-          preserveAspectRatio="xMidYMid meet"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <title>{name}</title>
-          <text
-            fontSize="50px"
-            fill="#fff"
-            dominantBaseline="central"
-            textAnchor="middle"
-            className={[
-              typography.antialiased,
-              typography.sansSerif,
-              typography.leadingSmall,
-              typography.fontWeightBold,
-            ].join(' ')}
-          >
-            {firstInitial}
-          </text>
-        </svg>
-      )}
-    </Square>
+    <Mask shape={shape} wash>
+      <Image
+        alt={name}
+        color="#EFEFEF"
+        naturalHeight={1}
+        naturalWidth={1}
+        src={src}
+        onError={onError}
+      />
+    </Mask>
   );
+}
+
+DefaultAvatar.propTypes = {
+  name: PropTypes.string,
+  profile: PropTypes.string,
+  shape: PropTypes.string,
+  onError: PropTypes.func,
 };
 
 type State = {| isImageLoaded: boolean |};
@@ -59,8 +47,7 @@ type AvatarProps = {|
   outline?: boolean,
   size?: 'sm' | 'md' | 'lg',
   src?: string,
-  verified?: boolean,
-  icon?: 'check-circle' | 'pinterest',
+  profile?: string,
 |};
 
 const sizes = {
@@ -75,7 +62,7 @@ export default class Avatar extends React.PureComponent<AvatarProps, State> {
     outline: PropTypes.bool,
     src: PropTypes.string,
     size: PropTypes.oneOf(['sm', 'md', 'lg']),
-    verified: PropTypes.bool,
+    profile: PropTypes.oneOf(['user', 'company']),
   };
 
   state = {
@@ -85,17 +72,12 @@ export default class Avatar extends React.PureComponent<AvatarProps, State> {
   handleImageError = () => this.setState({ isImageLoaded: false });
 
   render() {
-    const {
-      name,
-      outline,
-      size,
-      src,
-      verified,
-      icon = 'check-circle',
-    } = this.props;
+    const { name, outline, size, src, profile } = this.props;
     const { isImageLoaded } = this.state;
     const width = size ? sizes[size] : '100%';
     const height = size ? sizes[size] : '';
+
+    const shape = profile === 'user' ? 'circle' : 'square';
 
     return (
       <Box
@@ -112,10 +94,10 @@ export default class Avatar extends React.PureComponent<AvatarProps, State> {
         width={width}
         height={height}
         position="relative"
-        shape="circle"
+        shape={shape}
       >
         {src && isImageLoaded ? (
-          <Mask shape="circle" wash>
+          <Mask height={height} shape={shape} wash>
             <Image
               alt={name}
               color="#EFEFEF"
@@ -126,36 +108,12 @@ export default class Avatar extends React.PureComponent<AvatarProps, State> {
             />
           </Mask>
         ) : (
-          <DefaultAvatar name={name} />
-        )}
-        {verified && (
-          <Box
-            position="absolute"
-            width="20%"
-            height="20%"
-            minWidth={8}
-            minHeight={8}
-            dangerouslySetInlineStyle={{
-              __style: {
-                bottom: '4%',
-                right: '4%',
-              },
-            }}
-          >
-            <Box
-              color="white"
-              width="100%"
-              height="100%"
-              shape="circle"
-              dangerouslySetInlineStyle={{
-                __style: {
-                  boxShadow: '0 0 0 2px #fff',
-                },
-              }}
-            >
-              <Icon color="red" icon={icon} accessibilityLabel="" size="100%" />
-            </Box>
-          </Box>
+          <DefaultAvatar
+            name={name}
+            profile={profile}
+            shape={shape}
+            onError={this.handleImageError}
+          />
         )}
       </Box>
     );

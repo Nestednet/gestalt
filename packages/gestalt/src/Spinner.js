@@ -1,28 +1,24 @@
 // @flow
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import Box from './Box.js';
-import Icon from './Icon.js';
 import styles from './Spinner.css';
 
-const SIZE = 40;
+// const SIZE = 40;
 
 type Props = {|
-  accessibilityLabel: string,
-  show: boolean,
+  accessibilityLabel?: string,
+  show?: boolean,
 |};
 
-export default function Spinner({ accessibilityLabel, show }: Props) {
+export default function Spinner({
+  accessibilityLabel = 'spinner',
+  show = true,
+}: Props) {
   return show ? (
-    <Box xs={{ display: 'flex' }} justifyContent="around" overflow="hidden">
-      <div className={styles.icon}>
-        <Icon
-          icon="knoop"
-          accessibilityLabel={accessibilityLabel}
-          size={SIZE}
-        />
-      </div>
-    </Box>
+    <div className={styles.spinner} accessibilityLabel={accessibilityLabel}>
+      <div className={styles.dot} />
+      <div className={styles.circle} />
+    </div>
   ) : (
     <div />
   );
