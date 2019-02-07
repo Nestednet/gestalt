@@ -21,6 +21,7 @@ type Props = {|
   children?: React.Node,
   color?:
     | 'green'
+    | 'darkYellow'
     | 'pine'
     | 'olive'
     | 'blue'
@@ -37,6 +38,7 @@ type Props = {|
     | 'lightGray'
     | 'red'
     | 'white',
+
   inline?: boolean,
   italic?: boolean,
   overflow?: 'normal' | 'breakWord',
@@ -78,6 +80,7 @@ export default function Text({
     smSize && styles[`smFontSize${smScale}`],
     color === 'blue' && colors.blue,
     color === 'darkGray' && colors.darkGray,
+    color === 'darkYellow' && colors.darkYellow,
     color === 'eggplant' && colors.eggplant,
     color === 'gray' && colors.gray,
     color === 'green' && colors.green,
@@ -128,6 +131,7 @@ Text.propTypes = {
   children: PropTypes.node,
   color: PropTypes.oneOf([
     'green',
+    'darkYellow',
     'pine',
     'olive',
     'blue',

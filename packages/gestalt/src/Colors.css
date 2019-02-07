@@ -8,6 +8,7 @@
 
   /* secondary colors */
   --green: #0fa573;
+  --darkYellow: #B1840B;
   --pine: #0a6955;
   --olive: #364a4c;
   --blue: #4a90e2;
@@ -19,6 +20,7 @@
   --maroon: #6e0f3c;
   --watermelon: #f13535;
   --orange: #e3780c;
+  --yellow: #f9ecc9;
 
   /* transparent colors */
   --transparentDarkGray: rgba(51, 51, 51, 0.8);
@@ -86,6 +88,16 @@
 
 .greenBg {
   background-color: var(--green);
+}
+
+/* darkYellow */
+
+.darkYellow{
+  color: var(--darkYellow);
+}
+
+.darkYellowBg{
+  background-color: var(--darkYellow);
 }
 
 /* pine */
@@ -196,6 +208,16 @@
 
 .orangeBg {
   background-color: var(--orange);
+}
+
+/* yellow */
+
+.yellow {
+  color: var(--yellow);
+}
+
+.yellowBg {
+  background-color: var(--yellow);
 }
 
 /* transparent */

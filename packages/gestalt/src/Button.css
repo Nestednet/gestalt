@@ -4,6 +4,7 @@
   --red: #e60023;
   --lightGray: #efefef;
   --white: #fff;
+  --yellow: #ffe9ad;
 }
 
 .button {
@@ -121,4 +122,8 @@
 
 .white:active {
   background-color: #e8e8e8;
+}
+
+.yellow{
+  background-color: var(--yellow);
 }

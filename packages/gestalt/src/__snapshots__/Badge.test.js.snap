@@ -4,10 +4,6 @@ exports[`Badge renders 1`] = `
 <span
   className="badge pill info center"
 >
-  <div
-    className="Text fontSize3 darkGray alignLeft breakWord fontStyleNormal fontWeightNormal"
-  >
-    Test
-  </div>
+  Test
 </span>
 `;

@@ -142,7 +142,9 @@ type PropType = {
     | 'transparent'
     | 'transparentDarkGray'
     | 'watermelon'
-    | 'white',
+    | 'white'
+    | 'yellow',
+
   fit?: boolean,
   flex?: 'grow' | 'shrink' | 'none',
   height?: number | string,
@@ -478,6 +480,7 @@ const propToFn = {
     lightWash: colors.lightWashBg,
     darkWash: colors.darkWashBg,
     transparentDarkGray: colors.transparentDarkGrayBg,
+    yellow: colors.yellowBg,
     // default: transparent
   }),
   fit: toggle(layout.fit),
@@ -899,6 +902,7 @@ Box.propTypes = {
     'transparentDarkGray',
     'watermelon',
     'white',
+    'yellow',
   ]),
   fit: PropTypes.bool,
   flex: PropTypes.oneOf(['grow', 'shrink', 'none']),

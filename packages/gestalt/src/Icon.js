@@ -11,6 +11,7 @@ type IconProps = {
   color?:
     | 'blue'
     | 'darkGray'
+    | 'darkYellow'
     | 'eggplant'
     | 'gray'
     | 'green'
@@ -91,6 +92,7 @@ Icon.propTypes = {
   color: PropTypes.oneOf([
     'blue',
     'darkGray',
+    'darkYellow',
     'eggplant',
     'gray',
     'green',

@@ -12,7 +12,7 @@ type Props = {|
   accessibilityExpanded?: boolean,
   accessibilityHaspopup?: boolean,
   accessibilityLabel?: string,
-  color?: 'green' | 'transparent', // TODO: assignar als colors de nested // FIXME: FIXME
+  color?: 'green' | 'transparent' | 'yellow', // TODO: assignar als colors de nested // FIXME: FIXME
   disabled?: boolean,
   inline?: boolean,
   name?: string,
@@ -48,6 +48,7 @@ export default function Button(props: Props) {
     transparent: 'white',
     white: 'darkGray',
     green: 'white',
+    yellow: 'darkYellow',
   };
 
   const classes = classnames(styles.button, {
@@ -80,7 +81,8 @@ export default function Button(props: Props) {
           position="relative"
           display="flex"
           direction="row"
-          alignItems="center"
+          justifyContent="center"
+          alignItems="stretch"
         >
           <Icon
             icon={buttonIcon}
@@ -123,6 +125,7 @@ Button.propTypes = {
     'transparent',
     'white',
     'green',
+    'yellow',
   ]),
   disabled: PropTypes.bool,
   inline: PropTypes.bool,
