@@ -82,13 +82,8 @@ export default function Button(props: Props) {
           display="flex"
           direction="row"
           justifyContent="center"
-          alignItems="stretch"
+          alignItems="center"
         >
-          <Icon
-            icon={buttonIcon}
-            accessibilityLabel={buttonIcon}
-            color={disabled ? 'gray' : textColor[color]}
-          />
           <Text
             align="center"
             color={disabled ? 'gray' : textColor[color]}
@@ -97,6 +92,12 @@ export default function Button(props: Props) {
           >
             {text}
           </Text>
+          <Icon
+            icon={buttonIcon}
+            accessibilityLabel={buttonIcon}
+            color={disabled ? 'gray' : textColor[color]}
+            size={10}
+          />
         </Box>
       )}
       {!buttonIcon && (
