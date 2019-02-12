@@ -14,7 +14,7 @@ type State = {|
   hovered: boolean,
 |};
 
-export default class TableElement extends React.Component<Props, State> {
+export default class TableRow extends React.Component<Props, State> {
   static propTypes = {
     children: PropTypes.arrayOf(PropTypes.node),
     onMouseEnter: PropTypes.func,
@@ -57,7 +57,7 @@ export default class TableElement extends React.Component<Props, State> {
         justifyContent="between"
         alignItems="center"
         height="100%"
-        color={hovered ? 'eggplant' : 'midnight'}
+        color={hovered ? 'white' : 'lightGray'}
       >
         {children.map((child, index) => (
           <Column span={spanCol} key={index}>
@@ -75,19 +75,3 @@ export default class TableElement extends React.Component<Props, State> {
     );
   }
 }
-
-/*
-            <Box            position = "relative"            display="flex"            direction = "row"            alignContent="center"
-            alignItems="center"
-            justifyContent="between"
-            className = "transactions-table__row"
-            >
-                {children.map(child =>
-                    <Box column={spanCol} padding= {4}>
-                        {child}
-                    </Box>)
-                }
-            </Box>
-
-
-*/

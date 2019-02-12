@@ -38,6 +38,7 @@ import Spinner from './Spinner.js';
 import Sticky from './Sticky.js';
 import Switch from './Switch.js';
 import Table from './Table.js';
+import TableRow from './TableRow.js';
 import Tabs from './Tabs.js';
 import Text from './Text.js';
 import TextArea from './TextArea.js';
@@ -86,6 +87,7 @@ export {
   Sticky,
   Switch,
   Table,
+  TableRow,
   Tabs,
   Text,
   TextArea,
