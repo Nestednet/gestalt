@@ -21,6 +21,15 @@ type Props = {|
   text: string,
   type?: 'submit' | 'button',
   isPill?: boolean,
+  shape?:
+    | 'square'
+    | 'rounded'
+    | 'pill'
+    | 'circle'
+    | 'roundedTop'
+    | 'roundedBottom'
+    | 'roundedLeft'
+    | 'roundedRight',
   buttonIcon?: $Keys<typeof icons>,
 |};
 
@@ -39,6 +48,7 @@ export default function Button(props: Props) {
     size = 'md',
     text,
     type = 'button',
+    shape,
   } = props;
 
   const textColor = {
@@ -62,6 +72,10 @@ export default function Button(props: Props) {
     [styles.inline]: inline,
     [styles.block]: !inline,
     [styles.pill]: isPill,
+    [styles.roundedTop]: shape === 'roundedTop',
+    [styles.roundedBottom]: shape === 'roundedBottom',
+    [styles.roundedLeft]: shape === 'roundedLeft',
+    [styles.roundedRight]: shape === 'roundedRight',
   });
 
   /* eslint-disable react/button-has-type */

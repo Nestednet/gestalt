@@ -5,6 +5,7 @@
   --lightGray: #efefef;
   --white: #fff;
   --yellow: #ffe9ad;
+  --border-radius: 8px;
 }
 
 .button {
@@ -71,6 +72,34 @@
   border-radius: 500px;
 }
 
+.rounded {
+  border-radius: var(--border-radius);
+}
+
+.roundedTop {
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+html:not([dir="rtl"]) .roundedRight {
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+html[dir="rtl"] .roundedRight {
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+}
+
+.roundedBottom {
+  border-radius: 0 0 var(--border-radius) var(--border-radius);
+}
+
+html:not([dir="rtl"]) .roundedLeft {
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+}
+
+html[dir="rtl"] .roundedLeft {
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
 .red {
   composes: redBg from "./Colors.css";
 }
@@ -94,7 +123,7 @@
 }
 
 .blue:active {
-  /*background-color: #4a85c9;*/
+  /* background-color: #4a85c9; */
 }
 
 .transparent {

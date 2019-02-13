@@ -13,6 +13,7 @@ import Spinner from './Spinner.js';
 
 type Props = {|
   color?: string,
+  colorHeader?: string,
   columns: Array<string>,
   children: Array<TableRow>,
 |};
@@ -41,6 +42,7 @@ const ColumnsHash = {
 export default class Table extends React.Component<Props, State> {
   static propTypes = {
     color: PropTypes.string,
+    colorHeader: PropTypes.string,
     columns: PropTypes.arrayOf(PropTypes.string),
     children: PropTypes.node,
   };
@@ -59,10 +61,14 @@ export default class Table extends React.Component<Props, State> {
   }
 
   render() {
-    const { color = 'white', columns, children } = this.props;
+    const {
+      color = 'white',
+      colorHeader = 'lightGray',
+      columns,
+      children,
+    } = this.props;
     const { loaded } = this.state;
 
-    // const columnSize = columns.length;
     const globalClass = classnames(
       styles.booking_requests_transactions,
       styles.guest
@@ -74,24 +80,26 @@ export default class Table extends React.Component<Props, State> {
     const spanCol = (ColumnsHash[spanColAux]: Columns); // TODO: afegir excepcions */
 
     return (
-      <Box className={globalClass} col={12}>
+      <Box className={globalClass} col={12} color={color} shape="roundedTop">
         <Box
-          name="th"
+          alignItems="center"
+          color={colorHeader}
           display="flex"
           direction="row"
-          paddingY={2}
-          color={color}
+          name="th"
           shape="roundedTop"
         >
           {columns.map((column, index) => (
             <Column span={12} key={column + index}>
-              <Box name="thr" height="100%" color="white" paddingY={3}>
-                <Text align="center">{column}</Text>
+              <Box name="thr" height="100%" color={colorHeader} padding={3}>
+                <Text align="center" size="sm">
+                  {column}
+                </Text>
               </Box>
             </Column>
           ))}
         </Box>
-        <Box name="tb" paddingY={2} shape="roundedBottom" color="lightGray">
+        <Box name="tb" paddingY={2} shape="roundedBottom" color={color}>
           {loaded ? (
             children.map((child, index) => (
               <Box name="tbr" className={tableRow} key={tableRow + index}>
