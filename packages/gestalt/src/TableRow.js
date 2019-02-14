@@ -5,7 +5,7 @@ import Box from './Box.js';
 import Column from './Column.js';
 
 type Props = {|
-  color: PropTypes.string,
+  color: string,
   children: Array<React.Node>,
   onMouseEnter?: ({ event: SyntheticMouseEvent<HTMLDivElement> }) => void,
   onMouseLeave?: ({ event: SyntheticMouseEvent<HTMLDivElement> }) => void,
