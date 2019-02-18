@@ -123,6 +123,7 @@ type PropType = {
   bottom?: boolean,
   color?:
     | 'blue'
+    | 'catskillWhite'
     | 'darkGray'
     | 'darkWash'
     | 'eggplant'
@@ -461,25 +462,26 @@ const propToFn = {
   bottom: toggle(layout.bottom0),
   color: mapping({
     blue: colors.blueBg,
+    catskillWhite: colors.catskillWhite,
     darkGray: colors.darkGrayBg,
-    pine: colors.pineBg,
-    gray: colors.grayBg,
-    red: colors.redBg,
-    olive: colors.oliveBg,
-    lightGray: colors.lightGrayBg,
-    white: colors.whiteBg,
-    orange: colors.orangeBg,
-    green: colors.greenBg,
-    navy: colors.navyBg,
-    midnight: colors.midnightBg,
-    purple: colors.purpleBg,
-    orchid: colors.orchidBg,
-    eggplant: colors.eggplantBg,
-    maroon: colors.maroonBg,
-    watermelon: colors.watermelonBg,
-    lightWash: colors.lightWashBg,
     darkWash: colors.darkWashBg,
+    eggplant: colors.eggplantBg,
+    gray: colors.grayBg,
+    green: colors.greenBg,
+    lightGray: colors.lightGrayBg,
+    lightWash: colors.lightWashBg,
+    maroon: colors.maroonBg,
+    midnight: colors.midnightBg,
+    navy: colors.navyBg,
+    olive: colors.oliveBg,
+    orange: colors.orangeBg,
+    orchid: colors.orchidBg,
+    pine: colors.pineBg,
+    purple: colors.purpleBg,
+    red: colors.redBg,
     transparentDarkGray: colors.transparentDarkGrayBg,
+    watermelon: colors.watermelonBg,
+    white: colors.whiteBg,
     yellow: colors.yellowBg,
     // default: transparent
   }),
@@ -882,6 +884,7 @@ Box.propTypes = {
   bottom: PropTypes.bool,
   color: PropTypes.oneOf([
     'blue',
+    'catskillWhite',
     'darkGray',
     'darkWash',
     'eggplant',

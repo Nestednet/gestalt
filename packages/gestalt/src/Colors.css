@@ -7,19 +7,20 @@
   --darkGray: #333;
 
   /* secondary colors */
+  --blue: #4a90e2;
+  --catskillWhite: #F4F7FA;
   --green: #0fa573;
   --darkYellow: #B1840B;
-  --pine: #0a6955;
-  --olive: #364a4c;
-  --blue: #4a90e2;
-  --navy: #004b91;
-  --midnight: #133a5e;
-  --purple: #b469eb;
-  --orchid: #8046a5;
   --eggplant: #5b2677;
   --maroon: #6e0f3c;
-  --watermelon: #f13535;
+  --midnight: #133a5e;
+  --olive: #364a4c;
   --orange: #e3780c;
+  --orchid: #8046a5;
+  --pine: #0a6955;
+  --navy: #004b91;
+  --purple: #b469eb;
+  --watermelon: #f13535;
   --yellow: #f9ecc9;
 
   /* transparent colors */
@@ -127,7 +128,17 @@
 }
 
 .blueBg {
-  background-color: var(--blue);
+  background-color: var(--catskillWhite);
+}
+
+/* catskillWhite*/
+
+.catskillWhite {
+  color: var(--catskillWhite);
+}
+
+.catskillWhiteBg {
+  background-color: var(--catskillWhite);
 }
 
 /* navy */

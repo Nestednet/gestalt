@@ -68,6 +68,11 @@
   background-color: #50a789;
 }
 
+.green:hover,
+.green:focus {
+  background-color: #16a086;
+}
+
 .pill {
   border-radius: 500px;
 }
