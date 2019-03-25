@@ -140,6 +140,7 @@ type PropType = {
     | 'pine'
     | 'purple'
     | 'red'
+    | 'lightGreenSwansDown'
     | 'transparent'
     | 'transparentDarkGray'
     | 'watermelon'
@@ -479,6 +480,7 @@ const propToFn = {
     pine: colors.pineBg,
     purple: colors.purpleBg,
     red: colors.redBg,
+    lightGreenSwansDown: colors.lightGreenSwansDown,
     transparentDarkGray: colors.transparentDarkGrayBg,
     watermelon: colors.watermelonBg,
     white: colors.whiteBg,
@@ -901,6 +903,7 @@ Box.propTypes = {
     'pine',
     'purple',
     'red',
+    'lightGreenSwansDown',
     'transparent',
     'transparentDarkGray',
     'watermelon',

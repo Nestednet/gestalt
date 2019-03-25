@@ -78,7 +78,6 @@ export default class Table extends React.Component<Props, State> {
     // const MAX = 12;
     /* const spanColAux = Math.floor(12 / columns.length).toString();
     const spanCol = (ColumnsHash[spanColAux]: Columns); // TODO: afegir excepcions */
-
     return (
       <Box className={globalClass} col={12} color={color} shape="roundedTop">
         <Box

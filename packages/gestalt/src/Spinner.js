@@ -15,7 +15,7 @@ export default function Spinner({
   show = true,
 }: Props) {
   return show ? (
-    <div className={styles.spinner} accessibilityLabel={accessibilityLabel}>
+    <div className={styles.spinner} aria-label={accessibilityLabel}>
       <div className={styles.dot} />
       <div className={styles.circle} />
     </div>

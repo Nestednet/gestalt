@@ -116,15 +116,17 @@ export default class Image extends React.PureComponent<Props> {
           },
         }}
       >
-        <img
-          alt={alt}
-          className={styles.img}
-          onError={this.handleError}
-          onLoad={this.handleLoad}
-          sizes={sizes}
-          src={src}
-          srcSet={srcSet}
-        />
+        {src && (
+          <img
+            alt={alt}
+            className={styles.img}
+            onError={this.handleError}
+            onLoad={this.handleLoad}
+            sizes={sizes}
+            src={src}
+            srcSet={srcSet}
+          />
+        )}
         {childContent}
       </Box>
     );

@@ -9,7 +9,7 @@
   /* secondary colors */
   --blue: #4a90e2;
   --catskillWhite: #F4F7FA;
-  --green: #0fa573;
+  --green: #00bf99;
   --darkYellow: #B1840B;
   --eggplant: #5b2677;
   --maroon: #6e0f3c;
@@ -22,6 +22,7 @@
   --purple: #b469eb;
   --watermelon: #f13535;
   --yellow: #f9ecc9;
+  --lightGreenSwansDown: #d5ede9;
 
   /* transparent colors */
   --transparentDarkGray: rgba(51, 51, 51, 0.8);
@@ -139,6 +140,16 @@
 
 .catskillWhiteBg {
   background-color: var(--catskillWhite);
+}
+
+/* lightGreenSwansDow */
+
+.lightGreenSwansDown {
+  color: var(--lightGreenSwansDown);
+}
+
+.lightGreenSwansDownBg {
+  background-color: var(--lightGreenSwansDown);
 }
 
 /* navy */

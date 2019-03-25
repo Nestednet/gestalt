@@ -12,7 +12,7 @@ type Props = {|
   accessibilityExpanded?: boolean,
   accessibilityHaspopup?: boolean,
   accessibilityLabel?: string,
-  color?: 'green' | 'transparent' | 'yellow', // TODO: assignar als colors de nested // FIXME: FIXME
+  color?: 'green' | 'transparent' | 'yellow' | 'gray', // TODO: assignar als colors de nested // FIXME: FIXME
   disabled?: boolean,
   inline?: boolean,
   name?: string,

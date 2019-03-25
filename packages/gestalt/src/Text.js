@@ -36,6 +36,7 @@ type Props = {|
     | 'darkGray'
     | 'gray'
     | 'lightGray'
+    | 'lightGreenSwansDown'
     | 'red'
     | 'white',
 
@@ -85,6 +86,7 @@ export default function Text({
     color === 'gray' && colors.gray,
     color === 'green' && colors.green,
     color === 'lightGray' && colors.lightGray,
+    color === 'lightGreenSwansDown' && colors.lightGreenSwansDown,
     color === 'maroon' && colors.maroon,
     color === 'midnight' && colors.midnight,
     color === 'navy' && colors.navy,
@@ -146,6 +148,7 @@ Text.propTypes = {
     'darkGray',
     'gray',
     'lightGray',
+    'lightGreenSwansDown',
     'red',
     'white',
   ]),
