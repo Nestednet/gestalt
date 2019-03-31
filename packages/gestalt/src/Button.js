@@ -12,6 +12,7 @@ type Props = {|
   accessibilityExpanded?: boolean,
   accessibilityHaspopup?: boolean,
   accessibilityLabel?: string,
+  bold?: boolean,
   color?: 'green' | 'transparent' | 'yellow' | 'gray', // TODO: assignar als colors de nested // FIXME: FIXME
   disabled?: boolean,
   inline?: boolean,
@@ -48,6 +49,7 @@ export default function Button(props: Props) {
     size = 'md',
     text,
     type = 'button',
+    bold = false,
     shape,
   } = props;
 
@@ -56,7 +58,7 @@ export default function Button(props: Props) {
     gray: 'darkGray',
     red: 'white',
     transparent: 'white',
-    white: 'darkGray',
+    white: 'midnight',
     green: 'white',
     yellow: 'darkYellow',
   };
@@ -103,6 +105,7 @@ export default function Button(props: Props) {
             color={disabled ? 'gray' : textColor[color]}
             overflow="normal"
             size={size}
+            bold={bold}
           >
             {text}
           </Text>
@@ -120,6 +123,7 @@ export default function Button(props: Props) {
           color={disabled ? 'gray' : textColor[color]}
           overflow="normal"
           size={size}
+          bold={bold}
         >
           {text}
         </Text>
@@ -151,4 +155,5 @@ Button.propTypes = {
   type: PropTypes.oneOf(['button', 'submit']),
   isPill: PropTypes.bool,
   buttonIcon: PropTypes.string,
+  bold: PropTypes.bool,
 };

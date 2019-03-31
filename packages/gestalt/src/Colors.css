@@ -3,13 +3,13 @@
   --red: #e60023;
   --white: #fff;
   --lightGray: #efefef;
-  --gray: #8e8e8e;
-  --darkGray: #333;
+  --gray: #C4C4C4;
+  --darkGray: #233539;
 
   /* secondary colors */
   --blue: #4a90e2;
   --catskillWhite: #F4F7FA;
-  --green: #00bf99;
+  --green: #00BF99;
   --darkYellow: #B1840B;
   --eggplant: #5b2677;
   --maroon: #6e0f3c;
@@ -19,6 +19,7 @@
   --orchid: #8046a5;
   --pine: #0a6955;
   --navy: #004b91;
+  --midnight: #67788F;
   --purple: #b469eb;
   --watermelon: #f13535;
   --yellow: #f9ecc9;

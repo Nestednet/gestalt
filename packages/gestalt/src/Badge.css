@@ -18,8 +18,12 @@
   border-radius: 4px;
 }
 
+.rectangle {
+  border-radius: 0;
+}
+
 .warning {
-  background: #f9ecc9;
+  background: #FFE76C;
   color: #62321f;
 }
 

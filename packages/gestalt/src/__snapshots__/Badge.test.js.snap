@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Badge renders 1`] = `
-<span
-  className="badge pill info center"
->
-  Test
-</span>
-`;

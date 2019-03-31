@@ -16,9 +16,9 @@ type Props = {|
   align?: 'left' | 'right' | 'center' | 'justify',
   children?: React.Node,
   inline?: boolean,
-  shape?: 'pill' | 'rounded-rectangle',
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl',
   status?: 'warning' | 'alarm' | 'good' | 'info',
+  shape?: 'pill' | 'rounded-rectangle' | 'rectangle',
 |};
 
 export default function Badge({
@@ -45,7 +45,11 @@ export default function Badge({
   );
 
   const Tag = inline ? 'span' : 'div';
-  return <Tag className={classes}>{children}</Tag>;
+  return (
+    <Tag style={{ fontSize: '12px' }} className={classes}>
+      {children}
+    </Tag>
+  );
 }
 
 Badge.propTypes = {

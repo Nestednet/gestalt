@@ -10,7 +10,6 @@
 
 .button {
   composes: borderBox from "./Layout.css";
-  border-radius: 4px;
 }
 
 .solid {
@@ -65,7 +64,7 @@
 }
 
 .green {
-  background-color: #50a789;
+  background-color: #00BF99;
 }
 
 .green:hover,
@@ -147,6 +146,7 @@ html[dir="rtl"] .roundedLeft {
 
 .white {
   composes: whiteBg from "./Colors.css";
+  border: 1px solid #E5E5E5;
 }
 
 .white:hover,
