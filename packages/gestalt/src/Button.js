@@ -67,7 +67,7 @@ export default function Button(props: Props) {
     [styles.sm]: size === 'sm',
     [styles.md]: size === 'md',
     [styles.lg]: size === 'lg',
-    [styles.solid]: color !== 'transparent',
+    [styles.solid]: color !== 'transparent' && color !== 'white',
     [styles[color]]: !disabled,
     [styles.disabled]: disabled,
     [styles.enabled]: !disabled,
