@@ -136,7 +136,7 @@ export default class SelectList extends React.Component<Props, State> {
           <Icon
             icon="arrow-down"
             size={12}
-            color={disabled ? 'gray' : 'darkGray'}
+            color={disabled ? 'gray' : 'green'}
             accessibilityLabel=""
           />
         </Box>

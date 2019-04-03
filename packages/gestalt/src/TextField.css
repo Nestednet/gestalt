@@ -4,14 +4,14 @@
   composes: Text fontSize3 from "./Text.css";
   composes: xsCol12 from "./Column.css";
   appearance: none;
-  border-radius: 4px;
+  border-radius: 2px;
   border-style: solid;
   border-width: 1px;
-  padding: 8px 14px;
+  padding: 8px 26px;
 }
 
 .textField::placeholder {
-  color: #8e8e8e;
+  color: #67788F;
 }
 
 .textField:focus {
@@ -19,7 +19,7 @@
 }
 
 .normal {
-  border-color: #8e8e8e;
+  border-color: #E5E5E5;
 }
 
 .errored {
@@ -27,7 +27,7 @@
 }
 
 .enabled {
-  composes: darkGray from "./Colors.css";
+  composes: midnight from "./Colors.css";
   composes: whiteBg from "./Colors.css";
   cursor: text;
 }
