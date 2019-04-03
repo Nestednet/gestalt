@@ -7,9 +7,9 @@ import Mask from './Mask.js';
 
 type Props = {|
   name: string,
+  onError: () => void,
   profile?: string,
   shape: 'circle' | 'rounded' | 'square',
-  onError: () => void,
 |};
 
 function DefaultAvatar(props: Props) {
@@ -20,7 +20,7 @@ function DefaultAvatar(props: Props) {
       : 'https://s3-eu-west-1.amazonaws.com/nestednet-images/default-templates/avatars/company_avatar-default.jpg';
 
   return (
-    <Mask shape={shape} wash>
+    <Mask shape={shape} fit={fit} wash>
       <Image
         alt={name}
         color="#EFEFEF"
@@ -43,6 +43,7 @@ DefaultAvatar.propTypes = {
 type State = {| isImageLoaded: boolean |};
 
 type AvatarProps = {|
+  cover?: boolean,
   name: string,
   outline?: boolean,
   size?: 'sm' | 'md' | 'lg',
@@ -58,6 +59,7 @@ const sizes = {
 
 export default class Avatar extends React.PureComponent<AvatarProps, State> {
   static propTypes = {
+    cover: PropTypes.bool,
     name: PropTypes.string.isRequired,
     outline: PropTypes.bool,
     src: PropTypes.string,
@@ -72,13 +74,13 @@ export default class Avatar extends React.PureComponent<AvatarProps, State> {
   handleImageError = () => this.setState({ isImageLoaded: false });
 
   render() {
-    const { name, outline, size, src, profile } = this.props;
+    const { cover, name, outline, size, src, profile } = this.props;
     const { isImageLoaded } = this.state;
     const width = size ? sizes[size] : '100%';
     const height = size ? sizes[size] : '';
 
     const shape = profile === 'user' ? 'circle' : 'square';
-
+    const fit = cover ? 'cover' : 'none';
     return (
       <Box
         color="white"
@@ -101,6 +103,7 @@ export default class Avatar extends React.PureComponent<AvatarProps, State> {
             <Image
               alt={name}
               color="#EFEFEF"
+              fit={fit}
               naturalHeight={1}
               naturalWidth={1}
               src={src}
