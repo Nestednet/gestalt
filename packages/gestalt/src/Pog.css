@@ -82,3 +82,16 @@
 .gray.active {
   background-color: #828282;
 }
+
+.green {
+  composes: greenBg from "./Colors.css";
+}
+
+.green.hovered,
+.green.focused {
+  background-color: #16a086;
+}
+
+.green.active {
+  background-color: #16a086;
+}

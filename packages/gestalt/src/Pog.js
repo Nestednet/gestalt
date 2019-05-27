@@ -22,7 +22,8 @@ type Props = {|
     | 'transparentDarkGray'
     | 'gray'
     | 'lightGray'
-    | 'white',
+    | 'white'
+    | 'green',
   focused?: boolean,
   hovered?: boolean,
   iconColor?: 'gray' | 'darkGray' | 'red' | 'blue' | 'white',
@@ -93,6 +94,7 @@ Pog.propTypes = {
     'gray',
     'lightGray',
     'white',
+    'green',
   ]),
   focused: PropTypes.bool,
   hovered: PropTypes.bool,

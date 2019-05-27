@@ -15,7 +15,7 @@ type Props = {|
     | 'gray'
     | 'lightGray'
     | 'white',
-  iconColor?: 'gray' | 'darkGray' | 'red' | 'blue' | 'white',
+  iconColor?: 'gray' | 'darkGray' | 'red' | 'blue' | 'white' | 'green',
   icon: $Keys<typeof icons>,
   onClick?: ({ event: SyntheticMouseEvent<> }) => void,
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl',
@@ -38,6 +38,7 @@ export default class IconButton extends React.Component<Props, State> {
       'gray',
       'lightGray',
       'white',
+      'green',
     ]),
     icon: PropTypes.oneOf(Object.keys(icons)).isRequired,
     iconColor: PropTypes.oneOf(['gray', 'darkGray', 'red', 'blue', 'white']),
