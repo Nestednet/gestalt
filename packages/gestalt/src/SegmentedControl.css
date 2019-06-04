@@ -31,6 +31,10 @@
   border: 1px solid #ECECEC;
 }
 
+.itemIsNotSelected:not(:first-child):not(:last-child) {
+  border-right: 0;
+}
+
 .itemIsSelected { 
   background-color: #00BF99;
   border: 1px solid #00BF99;
