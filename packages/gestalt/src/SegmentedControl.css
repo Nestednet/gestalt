@@ -31,7 +31,7 @@
   border: 1px solid #ECECEC;
 }
 
-.itemIsNotSelected:not(:first-child):not(:last-child) {
+.itemIsNotSelected:not(:last-child) {
   border-right: 0;
 }
 
